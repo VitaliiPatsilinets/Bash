@@ -34,59 +34,35 @@
          
          
          
-         
-         #
-                                   
-* mkdir test1                    # Создать внутри этой папки каталог с именем test1
-* cd test1                       # Перейти в папку test1
-* touch 1.txt 2.txt 3.txt        #
-* ls                             #
-* cd ..                          #
-* mkdir test2                    #
-* rmdir test2                    #
-* rm test1/2.txt                 #
-* mkdir test3
-* cd test3
-* touch 1.txt 2.txt
-* cd ..
-* rm -r test3
-* mkdir test4
-* mv test1/1.txt test4
-* mv test1/3.txt test4
-* echo "line1" > test4/1.txt
-* echo "line2" >> test4/1.txt
-* echo "line3" >> test4/1.txt
-* cat test4/1.txt
-* echo "line1" > test4/3.txt
-* echo "line2" >> test4/3.txt
-* echo "line3" >> test4/3.txt
-* cat test4/1.txt test4/3.txt
-* nano test4/3.txt
- 
-```
-## Task 2
-##### Editing files, checking and killing proccesses, pinging websites
+   
+## Задание 2
 ```bash
-mkdir test3                                   # Create directory test3 
-cd test3                                      # Open directory test3 
-echo -e "row1\nrow2\nrow3\nrow4" > file4.txt  # Add 3 files to test3, each of which should contain 4 lines
+
+
+Предварительно создайте файл bash2.txt, в который вы будете добавлять выполненные команды.
+Зайти в домашнюю директорию через терминал.
+
+mkdir test3                                   # Создать папку test 3 
+cd test3                                      # Открыть папку test3 
+echo -e "row1\nrow2\nrow3\nrow4" > file4.txt  # Добавить в папку test 3 три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4
 echo -e "row1\nrow2\nrow3\nrow4" > file5.txt  
 echo -e "row1\nrow2\nrow3\nrow4" > file6.txt 
-grep "row2" file5.txt                         # Find the line "row2" in file5.txt 
-grep -R "row" .                               # Find the line "row" in the test3 directory
-grep -c "row" file6.txt                       # Count number of lines containing word "row" in file6.txt
-find . -name "file5.txt"                      # Find file5.txt in test3 directory
-find . -name "file5.txt" -delete              # Using find command delete file5.txt
-echo test > file4.txt                         # Using the echo command, add the word "test" to file4.txt
-sed 's/test/fail/g' file4.txt                 # Change the word "test" in file4.txt to "fail"
-echo test >> file4.txt                        # Add the word "test" to file4.txt so that the content is preserved
-ps aux                                        # View all processes in the system
-kill 666                                      # Kill process 666 in console
-ping artsiomrusau.com                         # Check the availability of the website artsiomrusau.com using ping
-ping -c 5 artsiomrusau.com                    # Send 5 packages to artsiomrusau.com  
-curl https://petstore.swagger.io/v2/pet/      # Using GET and cURL command, get info about registered pets at petstore.swagger.io
-findByStatus?status=registered                
-curl -X POST https://petstore.swagger.io/     # Using POST and cURL command, create a new user at petstore.swagger.io
+grep "row2" file5.txt                         # Найдите строку row2 в файле 5 
+grep -R "row" .                               # Найдите строку row в папке test3
+grep -c "row" file6.txt                       # Посчитайте сколько строк с содержимым row в файле 6
+find . -name "file5.txt"                      # Найдите файл 5 внутри папки test3
+find . -name "file5.txt" -delete              # Используя команду find, удалите файл 5
+echo test > file4.txt                         # Используя команду echo, добавьте слово test в файл 4
+sed 's/test/fail/g' file4.txt                 # Замените слово "test" в файле 4 на "fail"
+echo test >> file4.txt                        # Добавьте в файл 4 слово "test" так, чтобы сохранилось содержимое
+ps aux                                        # Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
+kill 666                                      # Убейте любой неважный процесс в консоли. Если боитесь удалить что-то лишнее,
+                                                то можете просто прислать сам запрос без его запуска.
+ping artsiomrusau.com                         # Узнайте доступность ресурса rusau.net, используя ping
+ping -c 5 artsiomrusau.com                    # Отправьте 5 пакетов на сайт rusau.net  
+curl https://petstore.swagger.io/v2/pet/      # Используя GET и команду curl, получите информацию о зарегистрированных питомцах с любым статусом
+findByStatus?status=registered                  на https://petstore.swagger.io/              
+curl -X POST https://petstore.swagger.io/     # Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
 v2/user --data "id=1" 
 --data "username=Darrel_Volkman80" 
 --data "firstName=Darrel" 
